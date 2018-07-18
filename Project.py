@@ -6,6 +6,7 @@ class Project:
         self.to_date = to_date
         if requires_dist:
             self.requires_dist = self.get_requires_dist()
+        self.packages = []
 
     def get_requires_dist(self):
         """
