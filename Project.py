@@ -1,9 +1,10 @@
 class Project:
 
-    def __init__(self, name, from_date, to_date, requires_dist=False):
+    def __init__(self, name, from_date, to_date, requires_dist=True):
         self.name = name
         self.from_date = from_date
         self.to_date = to_date
+        self.data = self.get_project_data()
         if requires_dist:
             self.requires_dist = self.get_requires_dist()
         self.packages = []
@@ -19,3 +20,7 @@ class Project:
         :return: list  of all packages that we need to download as Package object
         """
         raise NotImplemented("Not implemented!")
+
+    def get_project_data(self):
+        raise NotImplemented("Not implemented!")
+
